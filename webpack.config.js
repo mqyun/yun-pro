@@ -1,4 +1,5 @@
 const path = require('path')
+const webpack = require('webpack')
 
 module.exports = {
   mode: 'production',
@@ -34,5 +35,10 @@ module.exports = {
         ]
       },
     ]
-  }
+  },
+  plugins: [
+    new webpack.DefinePlugin({
+      'pubImgUrl': '"/src/images/"'
+    })
+  ]
 };

@@ -1,14 +1,10 @@
-import { pub1, alertMaxLoading } from './pub'
-import 'jquery'
-import axios from 'axios'
+import yunAxios from '../components/yunAxios/yunAxios'
 
 $(function () {
-  pub1()
-  console.log($('.test').text())
-  $('body').append(alertMaxLoading())
-
-  axios.post('/test').then(res => {
+  yunAxios.post('/test').then(res => {
     console.log(res)
+  }).catch(err => {
+    console.log(err)
   })
-
+  console.log(pubImgUrl);
 })
