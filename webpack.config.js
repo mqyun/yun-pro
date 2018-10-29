@@ -1,30 +1,38 @@
 const path = require('path')
 
 module.exports = {
-  mode: 'development',
+  mode: 'production',
   entry: {
-    user: './public/src/js/user.js',
-    admin: './public/src/js/admin.js'
+    main: './public/src/js/main.js',
+    user: './public/src/js/user.js'
   },
   output: {
-    path: path.resolve(__dirname, 'public/dist/js'),
+    path: path.resolve(__dirname, 'public/dist'),
     filename: '[name].js',
     chunkFilename: '[name].js'
   },
   module: {
     rules: [{
-      test: /\.js$/,
-      exclude: /node_modules/,
-      loader: 'babel-loader'
-    }, {
-      test: require.resolve('jquery'),
-      use: [{
-        loader: 'expose-loader',
-        options: '$'
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loader: 'babel-loader'
       }, {
-        loader: 'expose-loader',
-        options: 'jQuery'
-      }]
-    }]
+        test: require.resolve('jquery'),
+        use: [{
+          loader: 'expose-loader',
+          options: '$'
+        }, {
+          loader: 'expose-loader',
+          options: 'jQuery'
+        }]
+      }, {
+        test: /\.styl/,
+        use: [
+          'style-loader',
+          'css-loader',
+          'stylus-loader'
+        ]
+      },
+    ]
   }
 };

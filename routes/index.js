@@ -16,4 +16,21 @@ router.get('/json', async (ctx, next) => {
   }
 })
 
+router.post('/test', async (ctx, next) => {
+  ctx.body = {
+    code: 200,
+    message: '请求成功',
+    data: [{
+      id: 1,
+      name: 'test1'
+    }, {
+      id: 2,
+      name: 'test2'
+    }, {
+      id: 3,
+      name: 'test3'
+    }]
+  }
+})
+
 module.exports = router
