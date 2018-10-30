@@ -1,6 +1,6 @@
 import './yunLoading.styl'
 
-class YunLoading {
+class yunLoading {
 
   // parentWrap : 父级节点
   constructor(parentWrap) {
@@ -35,4 +35,4 @@ class YunLoading {
 
 }
 
-export default YunLoading
+export default yunLoading

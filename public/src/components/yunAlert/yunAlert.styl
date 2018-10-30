@@ -1,0 +1,29 @@
+toastWidth = 280px
+toastHeight = 56px
+positionIn = 10px
+
+.toast-box
+  position fixed
+  display none
+  width toastWidth
+  height toastHeight
+
+.toast-box.fixed-top
+  top positionIn
+  left 50%
+  margin-left -(toastWidth / 2)
+
+.toast-box.fixed-bottom
+  bottom positionIn
+  left 50%
+  margin-left -(toastWidth / 2)
+
+.toast-box.fixed-left
+  left positionIn
+  top 50%
+  margin-top -(toastHeight / 2)
+
+.toast-box.fixed-right
+  right positionIn
+  top 50%
+  margin-top -(toastHeight / 2)
